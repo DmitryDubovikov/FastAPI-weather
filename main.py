@@ -1,8 +1,12 @@
 import uvicorn
 from fastapi import FastAPI
 
+from api.handlers import router as router_weather
+
 
 app = FastAPI(title="Weather")
+
+app.include_router(router_weather)
 
 
 @app.get("/")
