@@ -17,7 +17,7 @@ class Weather(Base):
     __tablename__ = "weather"
 
     id = Column(Integer, primary_key=True)
-    city_id = Column(ForeignKey)
+    city_id = Column(ForeignKey("city.id"))
     city = relationship("City", back_populates="weathers")
     temperature = Column(Float)
     pressure = Column(Integer)
